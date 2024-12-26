@@ -1,0 +1,13 @@
+runtime: python312  # Use Python 3.9 or another supported version
+
+entrypoint: gunicorn -b :$PORT app:app
+
+handlers:
+- url: /static
+  static_dir: static
+
+- url: /.*
+  script: auto
+
+env_variables:
+  # Add any environment variables you might need
