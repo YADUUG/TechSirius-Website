@@ -217,7 +217,7 @@ section {
   left: 0;
   opacity: 0.05;
   z-index: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234154f1' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234154f1' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2V6h4V4H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 /*--------------------------------------------------------------
@@ -1943,17 +1943,29 @@ section {
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
+.testimonials {
+  padding: 80px 0; /* Adjust padding */
+  background: var(--light-bg); /* Add a light background */
+}
+
 .testimonials .testimonial-item {
   box-sizing: content-box;
-  padding: 30px;
-  margin: 40px 30px;
-  box-shadow: 0px 0 20px rgba(1, 41, 112, 0.1);
-  background: #fff;
+  padding: 30px; /* Keep padding */
+  margin: 20px 15px; /* Adjust margin for spacing */
+  box-shadow: var(--card-shadow); /* Use defined shadow */
+  background: #fff; /* White background for items */
   min-height: 320px;
   display: flex;
   flex-direction: column;
   text-align: center;
-  transition: 0.3s;
+  transition: var(--transition); /* Use defined transition */
+  border-radius: 10px; /* Rounded corners */
+  position: relative; /* Needed for pseudo-elements if any */
+}
+
+.testimonials .testimonial-item:hover {
+  box-shadow: var(--hover-shadow); /* Enhanced shadow on hover */
+  transform: translateY(-5px); /* Subtle lift effect */
 }
 
 .testimonials .testimonial-item .stars {
@@ -3239,4 +3251,100 @@ section {
     opacity: 1;
     transform: scale(1.12);
   }
+}
+
+/*--------------------------------------------------------------
+# Activity Section
+--------------------------------------------------------------*/
+.activity {
+  padding: 40px 0; /* Reduced vertical padding */
+  overflow: hidden;
+  background: var(--light-bg);
+}
+
+.activity .activity-item {
+  padding: 25px; /* Slightly increased padding */
+  box-shadow: var(--card-shadow);
+  border-radius: 10px;
+  text-align: center;
+  background: #fff;
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.activity .activity-item i {
+  font-size: 60px; /* Increased icon size */
+  color: var(--primary-color);
+  margin-bottom: 15px; /* Space between icon and number */
+  transition: var(--transition); /* Add transition for hover effect */
+}
+
+.activity .activity-item i:hover {
+  transform: scale(1.1); /* Subtle scale effect on hover */
+  color: var(--accent-color); /* Change color on hover */
+}
+
+.activity .activity-item h3 {
+  font-size: 48px; /* Kept number font size large */
+  display: inline-block;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 10px; /* Margin below number */
+  line-height: 1;
+}
+
+.activity .activity-item h3::after {
+  content: '+';
+  display: inline-block;
+  font-size: 36px; /* Slightly larger size for + */
+  font-weight: 400;
+  color: var(--secondary-color);
+  margin-left: 3px; /* Slightly more space */
+  vertical-align: top;
+  line-height: 1;
+}
+
+.activity .activity-item p {
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px; /* Standard text size, maybe slightly larger if needed */
+  color: var(--text-color);
+  line-height: 1.4; /* Improved line spacing for readability */
+}
+
+.activity .activity-item:hover {
+  box-shadow: var(--hover-shadow);
+  transform: translateY(-5px);
+}
+
+.clients .clients-slider .swiper-slide img:hover {
+  opacity: 1;
+}
+
+.clients .swiper-slide {
+  text-align: center; /* Center content */
+  padding: 0 15px; /* Add some horizontal padding */
+  box-sizing: border-box; /* Include padding in the element's total width */
+}
+
+.clients .clients-slider .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.clients .clients-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #4154f1;
+}
+
+.clients .clients-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #4154f1;
 }
