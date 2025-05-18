@@ -264,11 +264,47 @@
     breakpoints: {
       320: {
         slidesPerView: 1,
-        spaceBetween: 40
+        spaceBetween: 20
       },
-
       1200: {
         slidesPerView: 3,
+        spaceBetween: 20
+      }
+    }
+  });
+
+  /**
+   * Intern Showcase slider
+   */
+  new Swiper('.intern-showcase .swiper', {
+    speed: 600,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 40
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 50
       }
     }
   });

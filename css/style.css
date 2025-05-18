@@ -3348,3 +3348,20 @@ section {
 .clients .clients-slider .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #4154f1;
 }
+
+/*--------------------------------------------------------------
+# Intern Showcase
+--------------------------------------------------------------*/
+.intern-showcase .showcase-item img {
+  height: 400px; /* Adjust the height as needed */
+  object-fit: cover;
+  width: 200%;
+}
+
+.intern-showcase .swiper-pagination {
+  display: none;
+}
+
+/*--------------------------------------------------------------
+# Intern Dashboard
+--------------------------------------------------------------*/
