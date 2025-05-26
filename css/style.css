@@ -1954,13 +1954,14 @@ section {
   margin: 20px 15px; /* Adjust margin for spacing */
   box-shadow: var(--card-shadow); /* Use defined shadow */
   background: #fff; /* White background for items */
-  min-height: 320px;
+  min-height: 380px; /* Set a minimum height to prevent header shifting */
   display: flex;
   flex-direction: column;
   text-align: center;
   transition: var(--transition); /* Use defined transition */
   border-radius: 10px; /* Rounded corners */
   position: relative; /* Needed for pseudo-elements if any */
+  will-change: transform;
 }
 
 .testimonials .testimonial-item:hover {
@@ -3157,7 +3158,7 @@ section {
   margin: 40px 30px;
   box-shadow: 0px 0 20px rgba(1, 41, 112, 0.1);
   background: #fff;
-  min-height: 320px;
+  min-height: 380px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -3352,16 +3353,181 @@ section {
 /*--------------------------------------------------------------
 # Intern Showcase
 --------------------------------------------------------------*/
+.intern-showcase {
+  padding: 60px 0;
+  background: #f8f9fa;
+}
+
+.intern-showcase .showcase-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 3px solid #fff;
+}
+
+.intern-showcase .showcase-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-color: #47b2e4;
+}
+
 .intern-showcase .showcase-item img {
-  height: 400px; /* Adjust the height as needed */
+  width: 100%;
+  height: 400px;
   object-fit: cover;
-  width: 200%;
+  transition: all 0.5s ease;
+}
+
+.intern-showcase .showcase-item:hover img {
+  transform: scale(1.05);
+}
+
+.intern-showcase .swiper {
+  padding: 20px 0;
 }
 
 .intern-showcase .swiper-pagination {
-  display: none;
+  margin-top: 20px;
+  position: relative;
+}
+
+.intern-showcase .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #47b2e4;
+  opacity: 0.5;
+}
+
+.intern-showcase .swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: #47b2e4;
+}
+
+/* Add animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intern-showcase .showcase-item {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Add staggered animation delay for each slide */
+.intern-showcase .swiper-slide:nth-child(1) .showcase-item {
+  animation-delay: 0.1s;
+}
+
+.intern-showcase .swiper-slide:nth-child(2) .showcase-item {
+  animation-delay: 0.2s;
+}
+
+.intern-showcase .swiper-slide:nth-child(3) .showcase-item {
+  animation-delay: 0.3s;
+}
+
+.intern-showcase .swiper-slide:nth-child(4) .showcase-item {
+  animation-delay: 0.4s;
+}
+
+.intern-showcase .swiper-pagination {
+  display: none !important; /* Added !important for certainty */
+}
+
+.intern-showcase .swiper-slide {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
 
 /*--------------------------------------------------------------
 # Intern Dashboard
 --------------------------------------------------------------*/
+.intern-dashboard {
+  padding: 60px 0;
+  background: #f6f9ff;
+}
+
+.intern-dashboard .box {
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  height: 100%;
+}
+
+.intern-dashboard .box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+}
+
+.intern-dashboard .dashboard-icon {
+  font-size: 48px;
+  color: #4154f1;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.intern-dashboard .box h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #4154f1;
+}
+
+.intern-dashboard .box ul {
+  margin: 20px 0;
+  padding: 0;
+}
+
+.intern-dashboard .box ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intern-dashboard .box ul li i {
+  color: #4154f1;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.intern-dashboard .btn-get-started {
+  background: #4154f1;
+  color: #fff;
+  padding: 12px 40px;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.intern-dashboard .btn-get-started:hover {
+  background: #2a3fd9;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(65, 84, 241, 0.3);
+}
+
+@media (max-width: 768px) {
+  .intern-dashboard .box {
+    margin-bottom: 30px;
+  }
+  
+  .intern-dashboard .dashboard-icon {
+    font-size: 36px;
+  }
+  
+  .intern-dashboard .box h3 {
+    font-size: 20px;
+  }
+}
